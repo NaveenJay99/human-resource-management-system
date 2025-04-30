@@ -1,0 +1,48 @@
+﻿<Page x:Class="HRMS_App.Views.DepartmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="White"
+      Title="DepartmentPage">
+
+    <Grid Background="White" Width="740" Height="640" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 🔹 Title -->
+        <TextBlock Text="Department Management" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <!-- 🔹 Form -->
+        <StackPanel Grid.Row="0" Margin="0,40,0,20">
+            <WrapPanel Margin="0,5,0,5">
+                <TextBox x:Name="txtDeptName" Width="200" Margin="5" ToolTip="Department Name" />
+                <TextBox x:Name="txtDeptID" Width="100" Margin="5" ToolTip="Department ID" />
+                <TextBox x:Name="txtDeptDesc" Width="300" Margin="5" ToolTip="Description" />
+            </WrapPanel>
+
+            <WrapPanel Margin="0,5,0,5">
+                <Button x:Name="btnAddDept" Content="Add" Width="90" Margin="5"/>
+                <Button x:Name="btnUpdateDept" Content="Update" Width="90" Margin="5"/>
+                <Button x:Name="btnDeleteDept" Content="Delete" Width="90" Margin="5"/>
+                <TextBox x:Name="txtSearchDept" Width="180" Margin="10,0" ToolTip="Search by name"/>
+                <Button x:Name="btnSearchDept" Content="Search" Width="90" Margin="5"/>
+            </WrapPanel>
+        </StackPanel>
+
+        <!-- 🔹 DataGrid -->
+        <DataGrid x:Name="dgDepartments"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  Margin="0"
+                  SelectionMode="Single"
+                  RowHeight="30">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding DeptID}" Width="*"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding DeptName}" Width="*"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding DeptDescription}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

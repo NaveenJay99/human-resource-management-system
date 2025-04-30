@@ -1,0 +1,20 @@
+﻿HRMSystem
+
+
+winexe
+C#
+.cs
+D:\Visual Programing\HRMSystem\HRMSystem\obj\Debug\net8.0-windows\
+HRMSystem
+none
+false
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+D:\Visual Programing\HRMSystem\HRMSystem\App.xaml
+17-1320455785
+
+33326056957
+2281202820847
+MainWindow.xaml;Pages\AdminDashBoard\AdminDashBoardMainPage.xaml;Pages\AuthPages\LoginPage.xaml;Pages\EmployeeDashBoard\EdApplyForLeave.xaml;Pages\EmployeeDashBoard\EdAttendanceRecordPage.xaml;Pages\EmployeeDashBoard\EdChangePasswordPage.xaml;Pages\EmployeeDashBoard\EdLeaveRecordsPage.xaml;Pages\EmployeeDashBoard\EdPayrollsPage.xaml;Pages\EmployeeDashBoard\EdViewMyDetailsPage.xaml;Pages\EmployeeDashBoard\MainEmployeeDashboardPage.xaml;Pages\HrmDashBoard\AttendancePage.xaml;Pages\HrmDashBoard\DepartmentPage.xaml;Pages\HrmDashBoard\EmployeePage.xaml;Pages\HrmDashBoard\HRManagerMainPage.xaml;Pages\HrmDashBoard\LeavePage.xaml;Pages\HrmDashBoard\PayrollPage.xaml;Pages\HrmDashBoard\ReportingPage.xaml;
+
+False
+
