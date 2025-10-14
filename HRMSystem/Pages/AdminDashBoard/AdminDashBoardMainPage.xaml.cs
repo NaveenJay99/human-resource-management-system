@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using HRMSystem.Pages.AdminDashBoard;
+using HRMSystem.Pages.AdminDashBoard.AddEmployee;
+using HRMSystem.Pages.AdminDashBoard.DepartmentManagement;
+using HRMSystem.Pages.HRMDashBoard;
+
 
 
 namespace HRMSystem.Pages
@@ -25,5 +18,38 @@ namespace HRMSystem.Pages
             InitializeComponent();
             _mainFrame = mainFrame;
         }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            _mainFrame.Navigate(new LoginPage(_mainFrame));
+        }
+
+        private void btnEmployeeManagement_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new AdAddEmployeePage());
+        }
+
+        private void btnDepartmentManagement_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new AdDepartmentManagementPage());
+        }
+        
+
+        private void btnHrmManagement_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new AdHrmManagementPage());
+        }
+
+        private void btnPayrollManagement_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new HrPayrollManagementPage());
+        }
+        private void btnReports_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new AdReportsPage());
+        } 
+
+        
+    
     }
 }

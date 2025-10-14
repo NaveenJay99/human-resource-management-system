@@ -1,28 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+﻿using System.Windows.Controls;
+using HRMSystem.Data;
 namespace HRMSystem.Pages.EmployeeDashBoard
 {
-    /// <summary>
-    /// Interaction logic for EdViewMyDetailsPage.xaml
-    /// </summary>
+  
     public partial class EdViewMyDetailsPage : Page
     {
-        public EdViewMyDetailsPage()
+      
+        private readonly string _loggedInEmail;
+        public EdViewMyDetailsPage(Frame mainFrame, string loggedInEmail)
         {
             InitializeComponent();
+            _loggedInEmail = loggedInEmail;
+            LoadEmployeeDetails();
+        }
+
+        private void LoadEmployeeDetails()
+        {
+            // Create the DbContext using the factory
+            var dbContextFactory = new HrmsDbContextFactory();
+            using var context = dbContextFactory.CreateDbContext(null);
+
+            var employee = context.Employees
+                                  .Where(e => e.Email == _loggedInEmail)
+                                  .Select(e => new
+                                  {
+                                      e.FirstName,
+                                      e.LastName,
+                                      e.ContactNumber,
+                                      e.Gender,
+                                      e.Email,
+                                      e.EmployeeId,
+                                      e.BasicSalary,
+                                      e.Position,
+                                      DepartmentName = e.Department != null ? e.Department.Name : "N/A"
+                                  })
+                                  .FirstOrDefault();
+
+            if (employee != null)
+            {
+                tbFirstName.Text = employee.FirstName;
+                tbLastName.Text = employee.LastName;
+                tbContactNumber.Text = employee.ContactNumber;
+                tbGender.Text = employee.Gender;
+                tbEmail.Text = employee.Email;
+                tbEmployeeId.Text = employee.EmployeeId;
+                tbBasicSalary.Text = $"{employee.BasicSalary}/=";
+                tbPosition.Text = employee.Position;
+                tbDepartment.Text = employee.DepartmentName;
+            }
+            else
+            {
+                tbFirstName.Text = "Employee not found.";
+            }
         }
     }
 }

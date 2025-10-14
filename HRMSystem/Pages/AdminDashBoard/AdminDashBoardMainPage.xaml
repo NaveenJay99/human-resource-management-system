@@ -9,8 +9,67 @@
       Title="AdminDashBoardPage"
       Background="white">
 
-    <Grid>
-        
+    <Grid Margin="0" Height="640">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="294"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Static Panel -->
+        <Grid Grid.Column="0" Background="#4A8A6E" Height="640" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="75*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.Resources>
+                <!-- Button style without hover effect -->
+                <Style x:Key="FlatButtonStyle" TargetType="Button">
+                    <Setter Property="Background" Value="#3C735A"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Margin" Value="0,5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="4">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+
+            <TextBlock Text="Admin DashBoard" Foreground="white" FontSize="26" HorizontalAlignment="Center"
+            VerticalAlignment="Center" FontWeight='Bold'/>
+            <StackPanel Grid.Row="1" VerticalAlignment="Stretch" >
+
+                <Button Content="Employee Management" Style="{StaticResource FlatButtonStyle}" Cursor="Hand"
+                    x:Name="btnEmployeeManagement" Click="btnEmployeeManagement_Click"/>
+                <Button Content="Department Management" Style="{StaticResource FlatButtonStyle}" Cursor="Hand"
+                    x:Name="btnDepartmentManagement" Click="btnDepartmentManagement_Click" />
+                <Button Content="HRM Management" Style="{StaticResource FlatButtonStyle}" Cursor="Hand" 
+                    x:Name="btnHrmManagement" Click="btnHrmManagement_Click" />
+                <Button Content="Payrolls Management" Style="{StaticResource FlatButtonStyle}" Cursor="Hand"
+                    x:Name="btnPayrollManagement" Click="btnPayrollManagement_Click"  />
+
+                <Button Content="Reports" Style="{StaticResource FlatButtonStyle}" Cursor="Hand"
+                    x:Name="btnReports" Click="btnReports_Click"  />
+            </StackPanel>
+            <Button Foreground="white" Background="#3C735A" Width="274" Grid.Row="2"  Content="Log Out" FontSize="18" HorizontalAlignment="Center" Height="40"
+                Margin="0,13,0,43"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                x:Name="btnLogOut" Click="btnLogOut_Click" />
+        </Grid>
+
+        <!-- Right Dynamic Section -->
+        <Frame x:Name="ContentFrame" Grid.Column="1" NavigationUIVisibility="Hidden"  HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" />
+
+
+
     </Grid>
 
 </Page>

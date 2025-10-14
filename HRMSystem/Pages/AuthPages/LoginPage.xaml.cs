@@ -1,46 +1,65 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using HRMS_App.Views;
+using HRMSystem.Pages.EmployeeDashBoard;
+using HRMSystem.Pages.HRMDashBoard;
+using HRMSystem.Services;
+using HRMSystem.Models;
+using System.Linq;
+using System.Windows;
+using HRMSystem.Data;
 
 namespace HRMSystem.Pages
 {
     public partial class LoginPage : Page
     {
         private readonly Frame _mainFrame;
+        private readonly HrmsDbContext _context;
 
-        // Hardcoded admin credentials
-        private readonly string adminUsername = "admin";
-        private readonly string adminPassword = "admin123";
 
         public LoginPage(Frame mainFrame)
         {
             InitializeComponent();
             _mainFrame = mainFrame;
+
+            var factory = new HrmsDbContextFactory();
+            _context = factory.CreateDbContext(null);
         }
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string username = txtUsername.Text.Trim();
+            string email = txtUsername.Text.Trim();
             string password = txtPassword.Password;
 
-            // Simple validation
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter both username and password", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please enter both email and password.");
                 return;
             }
 
-            // Hardcoded admin login
-            if (username == adminUsername && password == adminPassword)
+            // Hardcoded admin check
+            if (email == "admin@hrm.com" && password == "admin123")
             {
-                // Navigate to Admin Dashboard 
-                //_mainFrame.Navigate(new AdminDashBoardPage(_mainFrame));
-                _mainFrame.Navigate(new HRManagerMainPage(_mainFrame));
+                _mainFrame.Navigate(new AdminDashBoardPage(_mainFrame));
+                return;
+            }
 
+            // Look up employee by email
+            var employee = _context.Employees.FirstOrDefault(e => e.Email == email);
+
+            if (employee == null || !PasswordHashingService.Verify(password, employee.PasswordHash)
+)
+            {
+                MessageBox.Show("Invalid credentials.");
+                return;
+            }
+
+            if (employee.IsHRManager)
+            {
+                _mainFrame.Navigate(new MainHrmDashboardPage(_mainFrame, email));
             }
             else
             {
-                MessageBox.Show("Invalid credentials!", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                _mainFrame.Navigate(new MainEmployeeDashboardPage(_mainFrame, email));
             }
         }
     }

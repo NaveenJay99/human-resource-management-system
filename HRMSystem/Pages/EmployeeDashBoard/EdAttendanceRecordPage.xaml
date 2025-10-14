@@ -6,9 +6,51 @@
       xmlns:local="clr-namespace:HRMSystem.Pages.EmployeeDashBoard"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Width="730" Height="640" Background="White"
       Title="EdAttendanceRecordPage">
 
-    <Grid>
-        
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Attendance Records" FontSize="22" FontWeight="Bold" 
+                   VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="Select Date" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <TextBlock Text="From" Margin="20,0,5,0" VerticalAlignment="Center"/>
+            <DatePicker x:Name="FromDate" Margin="0,0,10,0" Width="150"/>
+
+            <TextBlock Text="To" Margin="20,0,5,0" VerticalAlignment="Center"/>
+            <DatePicker x:Name="ToDate" Margin="0,0,0,0" Width="150"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <DataGrid
+          AutoGenerateColumns="False"
+          x:Name="dataGridAttendanceRecords"
+          HeadersVisibility="Column"
+          CanUserAddRows="False"
+          Margin="10,10,30,4"
+          Height="250"
+          Width="Auto">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*" />
+                    <DataGridTextColumn Header="Check In Time" Binding="{Binding CheckInTime}" Width="*" />
+                    <DataGridTextColumn Header="Check Out Time" Binding="{Binding CheckOutTime}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock Text="Total Working Hours" FontSize="16" Margin="20" />
+            <TextBlock x:Name="tbTotalWorkingHours" Text="---"  FontSize="16" Margin="20" />
+        </StackPanel>
+
+
     </Grid>
 </Page>

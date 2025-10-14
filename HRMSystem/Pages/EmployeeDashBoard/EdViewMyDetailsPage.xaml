@@ -6,9 +6,85 @@
       xmlns:local="clr-namespace:HRMSystem.Pages.EmployeeDashBoard"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Width="730" Height="640" Background="white"
       Title="EdViewMyDetailsPage">
 
-    <Grid>
-        
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="42*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Foreground="gray" Text="Personal Details" FontSize="22" FontWeight="Bold" 
+    VerticalAlignment="Center"/>
+
+        <Grid Grid.Row="1" Margin="20" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Row 0 -->
+            <TextBlock FontSize="14" Grid.Row="0" Grid.Column="0" Text="First Name" FontWeight="Bold" Margin="5"/>
+            <TextBlock x:Name="tbFirstName"  Grid.Row="0" Grid.Column="1" Text="Joen" Margin="5"/>
+
+            <!-- Row 1 -->
+            <TextBlock FontSize="14" Grid.Row="1" Grid.Column="0" Text="Last Name" FontWeight="Bold" Margin="5"/>
+            <TextBlock FontSize="14" x:Name='tbLastName' Grid.Row="1" Grid.Column="1" Text="Doe" Margin="5"/>
+            <TextBlock FontSize="14" Grid.Row="0" Grid.Column="2" Text="Contact Number" FontWeight="Bold" Margin="5"/>
+            <TextBlock FontSize="14" x:Name="tbContactNumber" Grid.Row="0" Grid.Column="3" Text="[Contact Placeholder]" Margin="5"/>
+
+            <!-- Row 2 -->
+            <TextBlock FontSize="14" Grid.Row="2" Grid.Column="0" Text="Gender" FontWeight="Bold" Margin="5"/>
+            <TextBlock FontSize="14" x:Name="tbGender" Grid.Row="2" Grid.Column="1" Text="[Gender Placeholder]" Margin="5"/>
+            <TextBlock FontSize="14" Grid.Row="1" Grid.Column="2" Text="Email" FontWeight="Bold" Margin="5"/>
+            <TextBlock FontSize="14" x:Name="tbEmail" Grid.Row="1" Grid.Column="3" Text="[Email Placeholder]" Margin="5"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="20" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Row 0 -->
+            <TextBlock FontSize="14" Grid.Row="0" Grid.Column="0" Text="Employee ID" FontWeight="Bold" Margin="5"/>
+            <TextBlock FontSize="14" x:Name="tbEmployeeId" Grid.Row="0" Grid.Column="1" Text="E001" Margin="5"/>
+            <TextBlock FontSize="14" Grid.Row="0" Grid.Column="2" Text="Basic Salary" FontWeight="Bold" Margin="5"/>
+            <TextBlock FontSize="14" x:Name="tbBasicSalary" Grid.Row="0" Grid.Column="3" Text="76000/=" Margin="5"/>
+
+            <!-- Row 1 -->
+            <TextBlock FontSize="14" Grid.Row="1" Grid.Column="0" Text="Position" FontWeight="Bold" Margin="5"/>
+            <TextBlock FontSize="14" x:Name="tbPosition" Grid.Row="1" Grid.Column="1" Text="---" Margin="5"/>
+
+            <!-- Row 2 -->
+            <TextBlock FontSize="14" Grid.Row="2" Grid.Column="0" Text="Department" FontWeight="Bold" Margin="5"/>
+            <TextBlock FontSize="14" x:Name="tbDepartment" Grid.Row="2" Grid.Column="1" Text="IT" Margin="5"/>
+
+
+        </Grid>
+
+        <TextBlock Foreground="gray" Grid.Row="2" Text="Professional Details" FontSize="22" FontWeight="Bold" 
+    VerticalAlignment="Center"/>
+
+
     </Grid>
 </Page>

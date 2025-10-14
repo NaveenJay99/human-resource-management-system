@@ -1,28 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using HRMSystem.Data;
+using HRMSystem.Models;
 
 namespace HRMSystem.Pages.EmployeeDashBoard
 {
-    /// <summary>
-    /// Interaction logic for EdApplyForLeave.xaml
-    /// </summary>
+
+    
     public partial class EdApplyForLeave : Page
     {
-        public EdApplyForLeave()
+        private readonly HrmsDbContext _context;
+        private readonly string _loggedInEmail;
+        private Employee _currentEmployee;
+
+        public EdApplyForLeave(string loggedInEmail)
         {
             InitializeComponent();
+            _context = new HrmsDbContextFactory().CreateDbContext(null);
+            _loggedInEmail = loggedInEmail;
+
+            LoadEmployee();
         }
+
+        private void LoadEmployee()
+        {
+            _currentEmployee = _context.Employees.FirstOrDefault(e => e.Email == _loggedInEmail);
+            if (_currentEmployee == null)
+            {
+                MessageBox.Show("Logged-in employee not found.");
+                NavigationService.GoBack();
+            }
+        }
+        private void btnApply_Click(object sender, RoutedEventArgs e)
+        {
+            if (_currentEmployee == null)
+            {
+                MessageBox.Show("User not identified.");
+                return;
+            }
+
+            if (datePicker.SelectedDate == null || comboBoxLeaveType.SelectedItem == null)
+            {
+                MessageBox.Show("Please fill all fields.");
+                return;
+            }
+
+            var leave = new Leave
+            {
+                EmployeeId = _currentEmployee.EmployeeId,
+                LeaveDate = datePicker.SelectedDate.Value,
+                LeaveType = ((ComboBoxItem)comboBoxLeaveType.SelectedItem).Content.ToString(),
+                Detail = tbLeaveDetail.Text,
+                Status = "Pending"
+            };
+
+            _context.Leaves.Add(leave);
+            _context.SaveChanges();
+
+            MessageBox.Show("Leave request submitted successfully.");
+            ClearFields();
+        }
+
+        private void ClearFields()
+        {
+            datePicker.SelectedDate = null;
+            comboBoxLeaveType.SelectedIndex = -1;
+            tbLeaveDetail.Text = string.Empty;
+        }
+    
     }
 }

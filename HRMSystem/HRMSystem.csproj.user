@@ -2,7 +2,43 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Pages\AdminDashBoard\AddEmployee\AdAddEmployeePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\AddEmployee\AdDeleteEmployeeSubPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\AddEmployee\AdAddEmployeeSubPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\AddEmployee\AdUpdateEmployeeSubPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\AddEmployee\AdViewEmployeeSubPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\AdHrmManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\AdminDashBoard\AdminDashBoardMainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\AdReportsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\DepartmentManagement\AdAddDepartmentSubPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\DepartmentManagement\AdDeleteDepartmentSubPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\DepartmentManagement\AdDepartmentManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\DepartmentManagement\AdUpdateDepartmentSubPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminDashBoard\DepartmentManagement\AdViewDepartmentSubPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\AuthPages\LoginPage.xaml.cs">
@@ -20,13 +56,40 @@
     <Compile Update="Pages\EmployeeDashBoard\EdLeaveRecordsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\EmployeeDashBoard\EdPayrollsPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\EmployeeDashBoard\EdViewMyDetailsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\EmployeeDashBoard\MainEmployeeDashboardPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\EmployeeDashBoard\WelcomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\EmpManagementPages\HrAddEmployeePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\EmpManagementPages\HrEmployeeManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\EmpManagementPages\HrRemoveEmployeePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\HrAttendanceManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\HrChangePasswordPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\HrLeaveManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\HrPayrollManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\HrViewMyDetailsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HRMDashBoard\MainHrmDashboardPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

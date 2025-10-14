@@ -1,18 +1,34 @@
 ﻿
 
 FD:\Visual Programing\HRMSystem\HRMSystem\MainWindow.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\AddEmployee\AdAddEmployeePage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\AddEmployee\AdAddEmployeeSubPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\AddEmployee\AdDeleteEmployeeSubPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\AddEmployee\AdUpdateEmployeeSubPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\AddEmployee\AdViewEmployeeSubPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\AdHrmManagementPage.xaml;;
 FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\AdminDashBoardMainPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\DepartmentManagement\AdAddDepartmentSubPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\DepartmentManagement\AdDeleteDepartmentSubPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\DepartmentManagement\AdDepartmentManagementPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\DepartmentManagement\AdUpdateDepartmentSubPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\DepartmentManagement\AdViewDepartmentSubPage.xaml;;
 FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AuthPages\LoginPage.xaml;;
-FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HrmDashBoard\AttendancePage.xaml;;
-FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HrmDashBoard\EmployeePage.xaml;;
-FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HrmDashBoard\HRManagerMainPage.xaml;;
-FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HrmDashBoard\PayrollPage.xaml;;
-FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HrmDashBoard\ReportingPage.xaml;;
 FD:\Visual Programing\HRMSystem\HRMSystem\Pages\EmployeeDashBoard\EdApplyForLeave.xaml;;
 FD:\Visual Programing\HRMSystem\HRMSystem\Pages\EmployeeDashBoard\EdAttendanceRecordPage.xaml;;
 FD:\Visual Programing\HRMSystem\HRMSystem\Pages\EmployeeDashBoard\EdChangePasswordPage.xaml;;
 FD:\Visual Programing\HRMSystem\HRMSystem\Pages\EmployeeDashBoard\EdLeaveRecordsPage.xaml;;
-FD:\Visual Programing\HRMSystem\HRMSystem\Pages\EmployeeDashBoard\EdPayrollsPage.xaml;;
 FD:\Visual Programing\HRMSystem\HRMSystem\Pages\EmployeeDashBoard\EdViewMyDetailsPage.xaml;;
 FD:\Visual Programing\HRMSystem\HRMSystem\Pages\EmployeeDashBoard\MainEmployeeDashboardPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\EmployeeDashBoard\WelcomePage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\EmpManagementPages\HrAddEmployeePage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\EmpManagementPages\HrEmployeeManagementPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\EmpManagementPages\HrRemoveEmployeePage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\HrAttendanceManagementPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\HrChangePasswordPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\HrLeaveManagementPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\HrPayrollManagementPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\HrViewMyDetailsPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\HRMDashBoard\MainHrmDashboardPage.xaml;;
+FD:\Visual Programing\HRMSystem\HRMSystem\Pages\AdminDashBoard\AdReportsPage.xaml;;
 

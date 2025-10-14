@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HRMSystem"
         mc:Ignorable="d"
-        Title="Human Resource Management System" Height="640" Width="1024"
-        ResizeMode="CanMinimize">
-    <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        Title="Human Resource Management System" Height="674" Width="1024"
+        ResizeMode="CanMinimize"
+        >
+    <Grid Margin="0" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="395*"/>
+            <ColumnDefinition Width="629*"/>
+        </Grid.ColumnDefinitions>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="0,0,0,0" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
     

@@ -5,48 +5,69 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HRMSystem.Pages.EmployeeDashBoard"
       mc:Ignorable="d" 
-      d:DesignHeight="640" d:DesignWidth="1024"
       Title="MainEmployeeDashboardPage" Background="white"
-      Width="1024" Height="640">
+      Width="1024" Height="640"
+      >
 
-    <Grid>
+    <Grid Margin="0" Height="640">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="284"/>
+            <ColumnDefinition Width="294"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Background="#4A8A6E">
+        <!-- Left Static Panel -->
+        <Grid Grid.Column="0" Background="#4A8A6E" Height="640" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="8*" />
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Employee DashBoard" Foreground="white" FontSize="30" HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
-            <Button Grid.Row="1" Content="View my Details" Width="270" Height="64" FontSize="26"
-                    Background="LightGray"/>
-            <Button Grid.Row="2" Content="Attendance Records"
-                Width="270" Height="64" FontSize="26"
-                Background="Transparent" Foreground="White"
-                 >
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
-                            CornerRadius="16">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center" />
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>  
-            </Button>
+            <Grid.Resources>
+                <!-- Button style without hover effect -->
+                <Style x:Key="FlatButtonStyle" TargetType="Button">
+                    <Setter Property="Background" Value="#3C735A"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Margin" Value="0,5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="4">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+
+            <TextBlock Text="Employee DashBoard" Foreground="white" FontSize="26" HorizontalAlignment="Center"
+VerticalAlignment="Center" FontWeight='Bold' Height="34" Width="258"/>
+            <StackPanel Grid.Row="1" >
+
+                <Button  Content="View My Details" Style="{StaticResource FlatButtonStyle}" Cursor="Hand"
+                    x:Name="btnViewMyDetails" Click="btnViewMyDetails_Click"/>
+                <Button Content="Attendance Records" Style="{StaticResource FlatButtonStyle}" Cursor="Hand"
+                    x:Name="btnAttendanceRecords" Click="btnAttendanceRecords_Click" />
+                <Button Content="Leave Records" Style="{StaticResource FlatButtonStyle}" Cursor="Hand" 
+                    x:Name="btnLeaveRecord" Click="btnLeaveRecord_Click" />
+
+                <Button Content="Apply for Leave" Style="{StaticResource FlatButtonStyle}" Cursor="Hand"
+                    x:Name="btnLeaveManagement"  Click="btnLeaveManagement_Click" />
+                <Button Content="Change Password" Style="{StaticResource FlatButtonStyle}" Cursor="Hand"
+                    x:Name="btnChangePassword" Click="btnChangePassword_Click"  />
+            </StackPanel>
+
+            <Button Foreground="white" Background="#3C735A" Width="274" Grid.Row="2" Content="Log Out" FontSize="18" HorizontalAlignment="Center"
+                Margin="0,32,0,28"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                x:Name="btnLogOut" Click="btnLogOut_Click" />   
         </Grid>
-        
+
+        <!-- Right Dynamic Section -->
+        <Frame x:Name="ContentFrame" Grid.Column="1" NavigationUIVisibility="Hidden"  HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch" />
 
 
     </Grid>

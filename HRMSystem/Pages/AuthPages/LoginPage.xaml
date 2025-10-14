@@ -6,11 +6,12 @@
       xmlns:local="clr-namespace:HRMSystem.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="1024"
+      Height="640" Width="1024"
       Title="LoginPage"
       Background="White">
 
 
-    <Grid Margin="0">
+    <Grid Margin="0" Height="640" >
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4.4*" />
@@ -32,7 +33,7 @@
             <TextBlock HorizontalAlignment="Center" Grid.Row="1" Foreground="White" 
                        Margin="0,25, 0, 0" Text="Human Resource Management System" FontWeight="Bold" 
                        FontSize="22"/>
-            <TextBlock Grid.Row="2" Text="Welcome to the Human Resource Management System! Effortlessly manage employee data, track attendance, handle performance, and more—all in one secure platform. Please log in to access your personalized dashboard and get started."
+            <TextBlock Grid.Row="2" Text="Welcome to Crew Cloud Effortlessly manage employee data, track attendance, handle performance, and more all in one secure platform. Please log in to access your personalized dashboard and get started!"
                        Foreground="white" FontWeight="Light" Width="400" TextWrapping="Wrap" 
                        TextAlignment="center" FontSize="16" Margin="0,40,10,10"/>
 

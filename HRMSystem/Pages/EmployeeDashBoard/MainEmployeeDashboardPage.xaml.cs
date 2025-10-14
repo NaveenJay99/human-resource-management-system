@@ -1,28 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using HRMSystem.Pages.HRMDashBoard;
 
 namespace HRMSystem.Pages.EmployeeDashBoard
 {
-    /// <summary>
-    /// Interaction logic for MainEmployeeDashboardPage.xaml
-    /// </summary>
+  
     public partial class MainEmployeeDashboardPage : Page
     {
-        public MainEmployeeDashboardPage()
+        private Frame _mainFrame;
+        private string _loggedInEmail;
+        public MainEmployeeDashboardPage(Frame mainFrame, string loggedInEmail)
         {
             InitializeComponent();
+            _mainFrame = mainFrame;
+            _loggedInEmail = loggedInEmail;
+           
         }
+
+        private void btnAttendanceRecords_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new EdAttendanceRecordPage(_loggedInEmail));
+        }
+
+       
+
+        private void btnLeaveManagement_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new EdApplyForLeave(_loggedInEmail));
+        }
+
+       
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            _mainFrame.Navigate(new LoginPage(_mainFrame));
+        }
+
+        private void btnLeaveRecord_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new EdLeaveRecordsPage(_loggedInEmail));
+        }
+
+        private void btnViewMyDetails_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new EdViewMyDetailsPage(_mainFrame, _loggedInEmail));
+        }
+
+        private void btnChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            //ContentFrame.Navigate(new EdChangePasswordPage());
+            ContentFrame.Navigate(new HrChangePasswordPage(_loggedInEmail));
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
     }
 }
